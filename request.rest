@@ -1,0 +1,88 @@
+### home page
+GET http://localhost:4000
+
+#############################################
+
+### get all posts
+GET http://localhost:4000/api/v1/post
+
+### get a post
+GET http://localhost:4000/api/v1/post/6790e52cba6f58ba0494fc3d
+
+### make a post1
+POST http://localhost:4000/api/v1/post
+Content-Type: application/json
+
+{
+  "title" : "My first post",
+  "body" : "This is my first post. I am so excited!"
+}
+
+### make a post2
+POST http://localhost:4000/api/v1/post
+Content-Type: application/json
+
+{
+  "title" : "My Second post",
+  "body" : "This is my second post. Are you too?"
+}
+
+### make a post3
+POST http://localhost:4000/api/v1/post
+Content-Type: application/json
+
+{
+  "title" : "My third post",
+  "body" : "This is my third post. Are you 3rd?"
+}
+
+### update a post
+PATCH http://localhost:4000/api/v1/post/6790b063ba6f58ba0494fc34
+Content-Type: application/json
+
+{
+  "title" : "My second post2",
+  "body" : "This is my second post2. I think you too."
+}
+
+### delete a post
+DELETE http://localhost:4000/api/v1/post/67944ba232d94d8ab3a3eea3
+
+#############################################
+
+### get all users
+GET http://localhost:4000/api/v1/auth
+
+### signup1
+POST http://localhost:4000/api/v1/auth/signup
+Content-Type: application/json
+
+{
+  "username": "Johnson",
+  "password": "mypassword"
+}
+
+### signup2
+POST http://localhost:4000/api/v1/auth/signup
+Content-Type: application/json
+
+{
+  "username": "Thomas",
+  "password": "1234abcd"
+}
+
+### login
+POST http://localhost:4000/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "username": "Johnson",
+  "password": "mypassword"
+}
+
+### logout
+GET http://localhost:4000/api/v1/auth/logout
+
+
+### whoami
+GET http://localhost:4000/api/v1/auth/whoami
