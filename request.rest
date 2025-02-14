@@ -7,7 +7,7 @@ GET http://localhost:4000
 GET http://localhost:4000/api/v1/post
 
 ### get a post
-GET http://localhost:4000/api/v1/post/6790e52cba6f58ba0494fc3d
+GET http://localhost:4000/api/v1/post/6790b063ba6f58ba0494fc34
 
 ### make a post1
 POST http://localhost:4000/api/v1/post
@@ -41,8 +41,8 @@ PATCH http://localhost:4000/api/v1/post/6790b063ba6f58ba0494fc34
 Content-Type: application/json
 
 {
-  "title" : "My second post2",
-  "body" : "This is my second post2. I think you too."
+  "title" : "My second post",
+  "body" : "This is my second post. I think you too."
 }
 
 ### delete a post
