@@ -5,6 +5,7 @@ services:
       args:
         NODE_ENV: ${NODE_ENV}
         PORT: ${PORT}
+    image: jst0930/node-app
     tty: true
     # mongo가 먼저 로드되도록 한다
     depends_on:
@@ -17,6 +18,12 @@ services:
       - PORT=${PORT}
       - NODE_ENV=${NODE_ENV}
       - MY_ENV=my_environment_variable
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+      - SESSION_SECRET=${SESSION_SECRET}
+      - MONGO_USER=${MONGO_USER}
+      - MONGO_PASSWORD=${MONGO_PASSWORD}
+      - MONGO_IP=${MONGO_IP}
+      - MONGO_PORT=${MONGO_PORT}
     stop_grace_period: 1s
     volumes:
       - ./:/app # named volume인지 서브디렉토리인지 확실한 구분을 위해 서브디렉토리에는 /를 붙인다.
@@ -38,7 +45,7 @@ services:
     command: redis-server --requirepass ${REDIS_PASSWORD}
     ports: # productio에서는 포트를 expose하지 않는다.
       - 6379:6379
-  
+
 volumes:
   #  :으로 끝난다.
   mongo-db:

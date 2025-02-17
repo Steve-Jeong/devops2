@@ -6,6 +6,8 @@ import postRouter from "./routes/postRouter.js";
 import authRouter from "./routes/authRouter.js";
 import session from "express-session";
 
+//console.log(chalk.red(`process.env.SESSION_SECRET : ${process.env.SESSION_SECRET}`))
+
 connectMongoWithRetry();
 
 const app = express();
@@ -30,7 +32,7 @@ app.use(
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("Hello World\n");
+  res.send("Hello World!!!\n");
 });
 app.use("/api/v1/post", postRouter);
 app.use("/api/v1/auth", authRouter);
